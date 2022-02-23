@@ -20,9 +20,7 @@ func main() {
 	}
 
 	for number := 1; number <= max; number++ {
-		if number == 1 {
-			primeNumbers = append(primeNumbers, number)
-		} else {
+		if number != 1 {
 			checkNumber(number)
 		}
 	}
@@ -33,10 +31,6 @@ func main() {
 
 func checkNumber(number int) {
 	for _, primeNumber := range primeNumbers {
-		if primeNumber == 1 {
-			continue
-		}
-
 		if number%primeNumber == 0 {
 			return
 		}
