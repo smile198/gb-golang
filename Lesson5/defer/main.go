@@ -8,7 +8,6 @@ func main() {
 		defer func() {
 			fmt.Println(i)
 		}()
-
 		panic(2)
 	}
 
