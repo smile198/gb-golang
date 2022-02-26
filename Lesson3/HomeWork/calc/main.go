@@ -57,5 +57,6 @@ func calcFactorial(number int) int {
 	if number < 2 {
 		return 1
 	}
+
 	return number * calcFactorial(number-1)
 }
