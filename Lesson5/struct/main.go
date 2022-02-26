@@ -68,6 +68,5 @@ func main() {
 		},
 		radius: 6,
 	}
-
 	fmt.Println(circle1.DistanceTo(circle2))
 }

@@ -27,7 +27,6 @@ func main() {
 	operation := "+"
 
 	myOperation, exists := operations[operation]
-
 	if !exists {
 		panic(1)
 	}

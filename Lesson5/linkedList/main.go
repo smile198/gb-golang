@@ -6,5 +6,4 @@ type Node struct {
 }
 
 func main() {
-
 }
