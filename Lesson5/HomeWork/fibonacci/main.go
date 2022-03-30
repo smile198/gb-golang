@@ -47,6 +47,8 @@ func findFibonacciSequence(length uint, callback func(uint)) {
 		cached: make(map[uint]uint, length),
 	}
 
+	fmt.Println(fibonacci)
+
 	for index := uint(1); index <= length; index++ {
 		callback(fibonacci.getNumber(index))
 	}
