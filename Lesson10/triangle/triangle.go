@@ -14,6 +14,7 @@ type Triangle struct {
 	SideC float64
 }
 
+// Square returns square of triangle (calculated by Geron's method) and error, if it happens
 func (t Triangle) Square() (float64, error) {
 	if t.SideA+t.SideB <= t.SideC || t.SideA+t.SideC <= t.SideB || t.SideC+t.SideB <= t.SideA {
 		return 0, ErrImpossibleTriangle
@@ -23,6 +24,7 @@ func (t Triangle) Square() (float64, error) {
 	return math.Sqrt(p * (p - t.SideA) * (p - t.SideB) * (p - t.SideC)), nil
 }
 
+// String prints describe of triangle with sides and square (if can be calculated)
 func (t Triangle) String() string {
 	square, err := t.Square()
 	if err != nil {
