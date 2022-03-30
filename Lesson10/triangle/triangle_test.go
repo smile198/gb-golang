@@ -1,6 +1,7 @@
 package triangle
 
 import (
+	"errors"
 	"math"
 	"testing"
 )
@@ -54,15 +55,12 @@ func TestTriangle_Square(t *testing.T) {
 	for _, cse := range cases {
 		t.Run(cse.name, func(t *testing.T) {
 			square, err := cse.input.Square()
-			if err != nil {
+			if !errors.Is(err, cse.expectedError) {
 				t.Fatal(err)
 			}
-			//if !errors.Is(err, ErrImpossibleTriangle) {
-			//	t.Fatal(err)
-			//}
 
 			if !isCloseEnough(square, cse.expectedSquare) {
-				t.Fatal("Err")
+				t.Fatalf("expected: %f, got: %f", cse.expectedSquare, square)
 			}
 		})
 	}
